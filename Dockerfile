@@ -8,28 +8,21 @@ RUN apt-get update && apt-get install -y python3-opencv python3-dev git wget sud
 
 RUN ln -sv /usr/bin/python3 /usr/bin/python
 
-ARG USER_ID=1000
-
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-
-USER appuser
 
 WORKDIR /home/appuser
 
 ENV PATH="/home/appuser/.local/bin:${PATH}"
 
-RUN wget https://bootstrap.pypa.io/get-pip.py && 	python3 get-pip.py --user && 	rm get-pip.py
+RUN wget https://bootstrap.pypa.io/get-pip.py && 	python3 get-pip.py && 	rm get-pip.py
 
-RUN pip install --user tensorboard cmake   # cmake from apt-get is too old
-
-RUN pip install --user torch==1.10 torchvision==0.11.1 -f https://download.pytorch.org/whl/cu111/torch_stable.html
+RUN pip install torch==1.10 torchvision==0.11.1 -f https://download.pytorch.org/whl/cu111/torch_stable.html
 
 ENV FORCE_CUDA="1"
 
 ARG TORCH_CUDA_ARCH_LIST="Kepler;Kepler+Tesla;Maxwell;Maxwell+Tegra;Pascal;Volta;Turing"
 
 ENV TORCH_CUDA_ARCH_LIST="${TORCH_CUDA_ARCH_LIST}"
-
 
 ENV FVCORE_CACHE="/tmp"
 
