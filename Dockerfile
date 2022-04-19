@@ -1,4 +1,5 @@
 FROM nvidia/cuda:11.1.1-cudnn8-devel-ubuntu18.04
+ENV DEBIAN_FRONTEND noninteractive
 
 RUN sed -i s/archive.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list
 RUN sed -i s/security.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list
