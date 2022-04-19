@@ -28,7 +28,7 @@ ENV FVCORE_CACHE="/tmp"
 
 RUN pip install basicsr -i https://pypi.tuna.tsinghua.edu.cn/simple
 RUN pip install facexlib -i https://pypi.tuna.tsinghua.edu.cn/simple
-RUN pip install realesrgan https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip install realesrgan -i https://pypi.tuna.tsinghua.edu.cn/simple
 COPY . .
 
 RUN pip install --no-cache-dir \
