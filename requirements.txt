@@ -10,3 +10,4 @@ lmdb
 pyyaml
 tb-nightly
 yapf
+flask
