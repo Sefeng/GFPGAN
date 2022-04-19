@@ -4,9 +4,9 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN sed -i s/archive.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list
 RUN sed -i s/security.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list
 
-RUN apt-get update && apt-get install -y python3-opencv python3-dev git wget sudo
+RUN apt-get update && apt-get install -y python3-opencv python3.8 git wget sudo
 
-RUN ln -sv /usr/bin/python3 /usr/bin/python
+RUN ln -sv /usr/bin/python3.8 /usr/bin/python
 
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
