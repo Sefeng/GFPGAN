@@ -16,7 +16,7 @@ ENV PATH="/home/appuser/.local/bin:${PATH}"
 
 RUN python -m pip install --upgrade pip
 
-RUN pip install torch==1.10 torchvision==0.11.1 matplotlib -f https://download.pytorch.org/whl/cu111/torch_stable.html
+RUN pip install torch==1.10 torchvision==0.11.1 matplotlib
 
 ENV FORCE_CUDA="1"
 
