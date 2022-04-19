@@ -1,5 +1,5 @@
 FROM nvidia/cuda:11.1.1-cudnn8-devel-ubuntu18.04
-RUN apt-get update && apt-get install -y python3-opencv ca-certificates python3-dev git wget sudo ninja-build
+RUN apt-get update && apt-get install -y python3-opencv python3-dev git wget sudo
 
 RUN ln -sv /usr/bin/python3 /usr/bin/python
 
