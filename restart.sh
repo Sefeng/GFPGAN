@@ -6,4 +6,7 @@ git pull
 
 docker build -t gfpgan .
 
-docker run -it --gpus all --volume="/home/featurize/work/tmp:/home/appuser/tmp" --rm --name gfpgan-running gfpgan
+docker run -d --gpus all --volume="/home/featurize/work/tmp:/home/appuser/tmp" -p 5000:5000 --name gfpgan-running gfpgan
+
+
+docker exec -it gfpgan-running bash

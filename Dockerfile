@@ -36,4 +36,8 @@ RUN pip install --no-cache-dir \
 
 WORKDIR /home/appuser
 
+ENV FLASK_APP app
+
+CMD ["flask","run"]
+
 EXPOSE 5000
