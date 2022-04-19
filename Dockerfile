@@ -14,7 +14,7 @@ WORKDIR /home/appuser
 
 ENV PATH="/home/appuser/.local/bin:${PATH}"
 
-RUN wget https://bootstrap.pypa.io/get-pip.py && 	python3 get-pip.py && 	rm get-pip.py
+RUN wget https://bootstrap.pypa.io/get-pip.py && 	python get-pip.py && 	rm get-pip.py
 
 RUN pip install torch==1.10 torchvision==0.11.1 -f https://download.pytorch.org/whl/cu111/torch_stable.html
 
