@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN sed -i s/archive.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list
 RUN sed -i s/security.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list
 
-RUN apt-get update && apt-get install -y python3-opencv python3.8 python3-pip git wget sudo matplotlib
+RUN apt-get update && apt-get install -y python3-opencv python3.8 python3-pip git wget sudo
 
 RUN ln -sv /usr/bin/python3.8 /usr/bin/python
 
@@ -16,7 +16,7 @@ ENV PATH="/home/appuser/.local/bin:${PATH}"
 
 RUN python -m pip install --upgrade pip
 
-RUN pip install torch==1.10 torchvision==0.11.1 -f https://download.pytorch.org/whl/cu111/torch_stable.html
+RUN pip install torch==1.10 torchvision==0.11.1 matplotlib -f https://download.pytorch.org/whl/cu111/torch_stable.html
 
 ENV FORCE_CUDA="1"
 
