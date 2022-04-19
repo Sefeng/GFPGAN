@@ -33,7 +33,6 @@ COPY . .
 
 RUN pip install --no-cache-dir \
     -r requirements.txt  -i https://pypi.tuna.tsinghua.edu.cn/simple
-RUN wget https://github.com/TencentARC/GFPGAN/releases/download/v1.3.0/GFPGANv1.3.pth -P experiments/pretrained_models
 
 WORKDIR /home/appuser
 
